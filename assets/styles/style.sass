@@ -8,28 +8,46 @@ body
     height: 100%
     display: flex
     flex-direction: column
-
     font-family: 'Tajawal', sans-serif;
 
 header
     flex: 0 0 auto
+    display: flex
+    justify-content: space-between
+    flex-flow: row wrap
 
-    #main-title
+    #page-title
         font-family: 'Poiret One', cursive;
         font-weight: normal
         margin: 0
-        text-align: center
         white-space: nowrap
     
-    #sub-title
-        margin: 0
-        font-weight: 300
-        font-size: 100%
-        text-align: center
-        // display: none
+    #menu
+        display: flex
+        flex-direction: row-reverse
 
-        span
-            white-space: nowrap
+        #menu-item-username
+            display: flex
+            align-items: center
+            margin: 5px
+
+            #menu-user-icon
+                $icon-size: 24px
+                width: $icon-size
+                height: $icon-size
+                border-radius: 50%
+                margin-right: 5px
+                position: relative
+                background-color: #727ba5
+
+                #menu-user-abv
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    color: white
+                    font-weight: 500
+                    font-size: 80%
 
 main
     flex: 1 0 auto
