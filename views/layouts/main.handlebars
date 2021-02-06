@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{page_title}}</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    {{#each style_sheets}}
+    <link rel="stylesheet" href="./assets/css/{{this}}.css">
+    {{/each}}
+</head>
+<body>
+    <header>
+        <h1 id="page-title">Post Family Tree</h1>
+    </header>
+    <nav>
+
+    </nav>
+
+    <hr>
+
+    <main>
+        {{{body}}}
+    </main>
+
+    <hr>
+
+    <footer>
+        <div id="copyright">
+            <span>Made with ❤️️ by Makai Post</span>
+            <span>© 2020</span>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {{#each script_sheets}}
+    <link rel="stylesheet" href="./assets/js/{{this}}.js">
+    {{/each}}
+</body>
+</html>
