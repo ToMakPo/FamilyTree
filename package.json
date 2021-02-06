@@ -23,6 +23,7 @@
   "homepage": "https://github.com/ToMakPo/FamilyTree#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.0"
+    "express-handlebars": "^5.2.0",
+    "mongoose": "^5.11.15"
   }
 }
