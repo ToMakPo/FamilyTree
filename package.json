@@ -1,0 +1,28 @@
+{
+  "name": "family-tree",
+  "version": "1.0.0",
+  "description": "App used to track my family tree.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToMakPo/FamilyTree.git"
+  },
+  "keywords": [
+    "family",
+    "tree"
+  ],
+  "author": "Makai Post",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ToMakPo/FamilyTree/issues"
+  },
+  "homepage": "https://github.com/ToMakPo/FamilyTree#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0"
+  }
+}
