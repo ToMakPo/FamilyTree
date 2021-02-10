@@ -28,14 +28,14 @@ const UserSchema = new Schema({
 		match: [/.+@.+\..+/, 'Please enter a valid e-mail address'],
 		unique: true
 	},
-	self: {
+	selfId: {
 		type: Schema.Types.ObjectId,
 		ref: 'Person'
 	},
-	family: {
-		type: [Schema.Types.ObjectId],
-		ref: 'Person'
-	},
+	treeIds: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Tree'
+	}],
 	level: {
 		type: Number,
 		default: 0
@@ -78,6 +78,7 @@ UserSchema.methods.setup = function(password) {
 UserSchema.methods.login = function(password) {
 	if (this.verifyPassword(password)) {
 		this.lastLoggedIn = Date.now()
+		this.update({lastLoggedIn: this.lastLoggedIn})
 		return true
 	}
 	return false
