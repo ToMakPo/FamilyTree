@@ -2,19 +2,13 @@ const db = require('../config/database')
 const passport = require('../config/passport')
 const isAuthenticated = require('../config/middleware/isAuthenticated')
 
-// const isAuthenticated = ({user}, res, next) => {
-//     console.log('isAuthenticated', {user});
-//     user != null ? next() : res.redirect('/login')
-// }
-
 module.exports = function(app) {
-    app.get('/login', (req, res) => {
-        if (res.user) redirect('/')
+    app.get('/login', ({user}, res) => {
+        if (user) redirect('/')
         res.render('login', {layout: false})
     })
 
     app.get('/', isAuthenticated, ({user}, res) => {
-        console.log('/', {user});
         res.render('index', {
             pageTitle: 'My Family Tree - Home',
             styleSheets: ['index'],

@@ -2,7 +2,7 @@ const {User} = require('../config/database')
 const passport = require('../config/passport')
 
 module.exports = function(app) {
-    // Checks login credentials to see if they match the records.
+    // Valadates the login credentials.
     app.post('/login_user', async ({body}, res) => {
         const loginName = body.username.toLowerCase()
         const password = body.password
@@ -26,11 +26,7 @@ module.exports = function(app) {
         res.json({passed: true})
     })
 
-    app.post('/login', passport.authenticate('local'), ({body, user}, res) => {
-        user.login(body.password)
-        res.json(user)
-    })
-
+    // Valadates the sign up credentials.
     app.post('/signup_user', async ({body}, res) => {
         const {firstName, lastName, username, email, password, confirm} = body
         
@@ -105,5 +101,17 @@ module.exports = function(app) {
         const created = await user.save()
 
         res.json({passed: true})
+    })
+    
+    // Logs the user in.
+    app.post('/login', passport.authenticate('local'), ({body, user}, res) => {
+        user.login(body.password)
+        res.json(user)
+    })
+    
+    // Logs the user out.
+    app.get('/logout', (req, res) => {
+        req.logout()
+        res.redirect('/login')
     })
 }
