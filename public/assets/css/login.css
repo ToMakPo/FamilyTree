@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500&display=swap");
+body {
+  font-family: 'Tajawal', sans-serif;
+}
+
+main {
+  display: flex;
+}
+
+main > div {
+  max-width: 960px;
+  margin: auto;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  flex-flow: row wrap;
+}
+
+header {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+}
+
+header #page-title {
+  position: relative;
+  width: 80%;
+  min-width: 300px;
+}
+
+header #page-title span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2.5% 5%;
+  border-radius: 100px;
+  background-color: #ffffff88;
+  box-shadow: 0 0 10px 15px #ffffff88;
+  box-sizing: border-box;
+}
+
+header #page-title span h1 {
+  font-family: 'Poiret One', cursive;
+  font-weight: normal;
+  white-space: nowrap;
+  font-size: calc(min(4vw, 2.5rem));
+}
+
+@media screen and (max-width: 629px) {
+  header #page-title span h1 {
+    font-size: calc(min(8vw, 5rem));
+  }
+}
+
+header #page-title img {
+  max-width: 100%;
+}
+
+form input {
+  margin: 3px 5px;
+  padding: 2px 5px;
+}
+
+form button {
+  margin: 6px 5px;
+  padding: 5px 10px;
+  border: none;
+}
+
+form a {
+  color: #166370;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+form h2 {
+  font-size: 1.5rem;
+}
+
+#login-form {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+#login-form h2 {
+  padding: 5px 0 10px 10px;
+}
+
+#login-form > * {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#login-form > * > * {
+  flex: 1 0 auto;
+  justify-content: stretch;
+}
+
+#login-form #login-button {
+  background-color: #28adc5;
+}
+
+#signup-modal {
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  min-width: 100%;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #444444aa;
+}
+
+#signup-modal #signup-form {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+#signup-modal #signup-form h2 {
+  padding: 5px 0 10px 10px;
+}
+
+#signup-modal #signup-form > * {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: stretch;
+}
+
+#signup-modal #signup-form > *:not(:first-child) > * {
+  flex: 1 0 auto;
+}
+
+#signup-modal #signup-form > *:first-child {
+  justify-content: space-between;
+}
+
+#signup-modal #signup-form > * #close-signup-modal-button {
+  text-decoration: none;
+}
+
+#signup-modal #signup-form #signup-button {
+  background-color: #28adc5;
+}
+
+#info-box {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(min(500px, calc(100% - 20px)));
+  z-index: 9;
+  background-color: #c1e6ff;
+  font-size: 0.85rem;
+  border: 1px dashed #42b3ff;
+  padding: 10px;
+  pointer-events: none;
+  border-radius: 5px;
+}
+
+#info-box p {
+  white-space: pre-wrap;
+}
+
+hr {
+  width: 98%;
+  margin: 0.25rem auto;
+}
+
+footer #copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.25rem;
+  line-height: 1rem;
+  font-size: 0.85rem;
+}
+
+#toast {
+  visibility: hidden;
+  width: auto;
+  display: block;
+  padding: 10px 25px;
+  pointer-events: none;
+  position: fixed;
+  bottom: 7%;
+  min-width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: #444;
+  border-radius: 3px;
+  z-index: 99;
+  text-align: center;
+}
+
+#toast.show {
+  animation: fadein 0.5s, fadeout 1s 2.5s;
+  visibility: visible;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 7%;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 7%;
+    opacity: 1;
+  }
+  to {
+    bottom: -7%;
+    opacity: -1;
+  }
+}

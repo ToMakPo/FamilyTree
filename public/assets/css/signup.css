@@ -1,0 +1,7 @@
+#username-info:hover::before {
+  content: '- between 5 to 16 characters\A- only letters, numbers, and underscore (_)';
+}
+
+#password-info:hover::before {
+  content: '- minimum 8 characters\A- at least one of each:\A        lower case letter (a - z)\A        upper case letter (A - Z)\A        number (0 - 9)\A        special character (@$!%*?&)';
+}

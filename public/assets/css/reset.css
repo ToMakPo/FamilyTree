@@ -17,24 +17,31 @@ body {
 	font-family: sans-serif;
     display: flex;
     flex-direction: column;
+	min-width: 300px;
 }
 
 body > * {
     flex: 0 0 auto;
-    width: 100%;
 }
 
 main {
     flex: 1 0 auto;
+    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-size: 100%;
 }
 
-input, select, option, optgroup, textarea, button, pre, code {
+input, select, option, optgroup, textarea, button, pre {
 	font-size: 100%;
 	font-family: inherit;
+}
+
+code {
+	font-size: 100%;
+	font-family: monospace;
+	white-space: pre;
 }
 
 ol, ul {

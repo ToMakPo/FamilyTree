@@ -1,21 +1,37 @@
-module.exports = function(app) {
-    app.get('/', (req, res) => {
-        const user = {
-            _id: 'adf24233asdf5646adsf645asdf',
-            discription: 'Makai Post',
-            first_name: 'Makai',
-            last_name: 'Post',
-            username: 'MakPo',
-            password_hash: 'jh1234ljk23h4kjl23h4j3242hj4g23kjh4g123kjh4g2k3jh4g21',
-            email: 'post.makai@gmail.com',
-            // family_members: [125, 321, 42, 842, 214, 235],
-            created: '2021-01-05T15:25:42.325'
-        }
+const db = require('../config/database')
+const passport = require('../config/passport')
 
+const isAuthenticated = ({user}, res, next) => user != null ? next() : res.redirect('/login')
+
+module.exports = function(app) {
+    app.get('/login', (req, res) => {
+        if (res.user) redirect('/')
+        res.render('login', {layout: false})
+    })
+
+    app.get('/', isAuthenticated, ({user}, res) => {
         res.render('index', {
-            style_sheets: ['index'],
-            script_sheets: ['home'],
-            user_profile: user
+            pageTitle: 'My Family Tree - Home',
+            styleSheets: ['index'],
+            scriptSheets: ['index'],
+            user: req.body.user
         })
     })
+    
+    // app.post('/login', passport.authenticate('local', {
+    //     successRedirect: '/',
+    //     failureRedirect: '/login',
+    //     failureFlash: true
+    // }))
+
+    // app.get('/test/:table/:id', (req, res) => {
+    //     const {id, table} = req.params
+    //     db[table].findById(id)
+    //         .then(data => res.render(`test-${table.toLowerCase()}`, {
+    //             pageTitle: `Post Family Tree - ${data.firstName} ${data.lastName}`,
+    //             styleSheets: ['test'],
+    //             scriptSheets: ['test'],
+    //             user: JSON.parse(JSON.stringify(data))
+    //         }))
+    // })
 }

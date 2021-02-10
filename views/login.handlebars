@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>My Family Tree</title>
+    
+    <link rel='stylesheet' href='/assets/css/reset.css'>
+    <link rel='stylesheet' href='/assets/css/login.css'>
+</head>
+<body>
+    <main>
+        <div>
+            <header>
+                <div id='page-title'>
+                    <span>
+                        <h1>My Family Tree</h1>
+                    </span>
+                    <img src='/assets/img/tree.svg' alt='tree'>
+                </div>
+            </header>
+            <form id='login-form'>
+                <div>
+                    <h2>Log In</h2>
+                </div>
+                <div>
+                    <input id='username-login-input' type='text' placeholder='Username or Email' autocomplete='username' data-info='Please provide your username or email to login.'>
+                </div>
+                <div>
+                    <input id='password-login-input' type='password' placeholder='Password' autocomplete='current-password'>
+                </div>
+                <div>
+                    <button id='login-button' type='submit'>Submit</button>
+                </div>
+                <div>
+                    <p>Don't have an account yet? <a id='signup-button'>Sign up</a></p>
+                </div>
+            </form>
+        </div>
+        <div id='signup-modal'>
+            <form id='signup-form'>
+                <div>
+                    <h2>Sign up</h2>
+                    <a id='close-signup-modal-button'>✖️</a>
+                </div>
+                <div>
+                    <input id='first-name-signup-input' type='text' placeholder='First Name' autocomplete='given-name'>
+                    <input id='last-name-signup-input' type='text' placeholder='Last Name' autocomplete='family-name'>
+                </div>
+                <div>
+                    <input id='username-signup-input' type='text' placeholder='Username' autocomplete='username' 
+                        data-info='• between 5 to 16 characters
+• only use letters, numbers, and underscore (_)'
+                    >
+                </div>
+                <div>
+                    <input id='email-signup-input' type='text' placeholder='Email' autocomplete='email' data-info='Your email will only ever be used to help recover your password and to provide updates. You will never recive any spam and your infomation will never be sold to 3rd parties.'>
+                </div>
+                <div>
+                    <input id='password-signup-input' type='password' placeholder='Password' autocomplete='new-password'
+                        data-info='• minimum of 8 characters
+• must have at least one of each:
+    - lower case letter (a-z)
+    - upper case letter (A-Z)
+    - number (0-9)
+    - special character (@$!%*?&)'
+                    >
+                    <input id='confirm-signup-input' type='password' placeholder='Confirm' autocomplete='new-password' data-info='This must match the password.'>
+                </div>
+                <div>
+                    <button id='signup-button' type='submit'>Submit</button>
+                </div>
+            </form>
+        </div>
+        <div id='info-box'>
+            <h2>🛈nfo:</h2>
+            <p></p>
+        </div>
+    </main>
+
+    <hr>
+
+    <footer>
+        <div id='copyright'>
+            <span>Made with ❤️️ by Makai Post</span>
+            <span>© 2020</span>
+        </div>
+    </footer>
+
+    <span id="toast"></span>
+
+    <!-- SCRIPTS -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='/assets/js/global.js'></script>
+    <script src='/assets/js/login.js'></script>
+</body>
+</html>

@@ -1,11 +1,11 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const NoteSchema = new Schema({
+const EventSchema = new Schema({
 	title: String,
 	body: String
 });
 
-const Note = mongoose.model("Note", NoteSchema);
+const Event = mongoose.model('Event', EventSchema);
 
-module.exports = Note;
+module.exports = Event;

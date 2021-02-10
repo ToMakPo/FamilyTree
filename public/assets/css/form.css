@@ -1,0 +1,43 @@
+form h2 {
+  margin-bottom: 10px;
+}
+
+form .button-row {
+  text-align: right;
+  padding-top: 5px;
+}
+
+form input {
+  width: 200px;
+  padding: 2px 5px;
+}
+
+form label {
+  padding-right: 10px;
+}
+
+form label::after {
+  content: ":";
+}
+
+form .form-info {
+  font-size: 1.25rem;
+  color: #5e98a7;
+  position: relative;
+  cursor: help;
+  visibility: hidden;
+}
+
+form .form-info:hover::before {
+  position: absolute;
+  transform: translate(-100%, -20%);
+  background-color: #ddd;
+  white-space: pre;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+}
+
+form tr:focus-within .form-info {
+  visibility: visible;
+}
