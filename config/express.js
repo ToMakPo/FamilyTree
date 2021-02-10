@@ -9,13 +9,10 @@ const PORT = process.env.PORT || 9057
 
 const app = express()
 
+/// EXPRESS ///
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-
-/// ROUTES ///
-require('../routes/html-routes')(app)
-require('../routes/api-routes')(app)
 
 /// HANDLEBARS ///
 app.engine('handlebars', handlebars({ defaultLayout: 'main' }))
@@ -29,6 +26,10 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
+
+/// ROUTES ///
+require('../routes/html-routes')(app)
+require('../routes/api-routes')(app)
 
 app.listen(PORT, () => {
     console.log('Server listening on: http://localhost:' + PORT)

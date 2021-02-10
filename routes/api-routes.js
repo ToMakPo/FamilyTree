@@ -23,14 +23,12 @@ module.exports = function(app) {
             return res.json({passed: false, issue: 'password', error:'That password did not match our records.'})
         }
         
-        console.log('Passed');
         res.json({passed: true})
     })
 
-    app.post('/login', passport.authenticate('local'), (req, res) => {
-    // app.post('/login', (req, res) => {
-        console.log('Logging In');
-        // const loggedIn = user.login(password)
+    app.post('/login', passport.authenticate('local'), ({body, user}, res) => {
+        user.login(body.password)
+        res.json(user)
     })
 
     app.post('/signup_user', async ({body}, res) => {

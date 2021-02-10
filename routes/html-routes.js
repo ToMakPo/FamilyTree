@@ -1,7 +1,11 @@
 const db = require('../config/database')
 const passport = require('../config/passport')
+const isAuthenticated = require('../config/middleware/isAuthenticated')
 
-const isAuthenticated = ({user}, res, next) => user != null ? next() : res.redirect('/login')
+// const isAuthenticated = ({user}, res, next) => {
+//     console.log('isAuthenticated', {user});
+//     user != null ? next() : res.redirect('/login')
+// }
 
 module.exports = function(app) {
     app.get('/login', (req, res) => {
@@ -10,11 +14,12 @@ module.exports = function(app) {
     })
 
     app.get('/', isAuthenticated, ({user}, res) => {
+        console.log('/', {user});
         res.render('index', {
             pageTitle: 'My Family Tree - Home',
             styleSheets: ['index'],
             scriptSheets: ['index'],
-            user: req.body.user
+            user
         })
     })
     

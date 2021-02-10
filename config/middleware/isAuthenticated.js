@@ -1,1 +1,4 @@
-module.exports = ({user}, res, next) => user != null ? next() : res.redirect('/login')
+module.exports = ({user}, res, next) => {
+    console.log('isAuthenticated', {user});
+    user != null ? next() : res.redirect('/login')
+}

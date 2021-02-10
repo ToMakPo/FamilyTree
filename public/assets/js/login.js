@@ -53,9 +53,11 @@ loginForm.on('submit', async event => {
         $(`#${data.issue}-login-input`).focus()
         displayError(data.error)
     } else {
-        console.log('Passed');
-        // loginForm[0].reset()
-        $.post('login', values)
+        loginForm[0].reset()
+        $.post('/login', values).then(() => {
+            location.replace('/')
+        })
+        .catch(console.log)
     }
 })
 
@@ -79,6 +81,9 @@ signupForm.on('submit', async event => {
         displayError(data.error)
     } else {
         signupForm[0].reset()
-        $.post('login', values)
+        $.post('/login', values).then(() => {
+            location.replace('/')
+        })
+        .catch(console.log)
     }
 })
