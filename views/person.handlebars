@@ -1,0 +1,78 @@
+<form id='person-info-form'>
+    <h2>Person</h2>
+    <div id='name-box' class='input-box'>
+        <div id='name-header' class='input-header'>
+            <label>Name</label>
+            
+            <button id='toggle-name-menu-button' class='toggle-menu-button'>⋯</button>
+            <span id='name-menu-display' class='menu-display hidden' index=1>
+                <label for="name-category-select">Category</label>
+                <select id="name-category-select">
+                    <option value="birth" selected>Birth</option>
+                    <option value="marrage">Marrage</option>
+                    <option value="change">Change of Name</option>
+                    <option value="adoption">Adoption</option>
+                </select>
+                <hr>
+                <label>Display</label>
+                <span class='name-display-checkbox'>
+                    <input id="display-prefex-checkbox" type="checkbox" value='prefex-input'>
+                    <label for="display-prefex-checkbox">Prefex</label>
+                </span>
+                <span class='name-display-checkbox'>
+                    <input id="display-given-name-checkbox" type="checkbox" checked disabled value='given-name-input'>
+                    <label for="display-given-name-checkbox">Given Name</label>
+                </span>
+                <span class='name-display-checkbox'>
+                    <input id="display-middle-name-checkbox" type="checkbox" checked value='middle-name-input'>
+                    <label for="display-middle-name-checkbox">Middle Name</label>
+                </span>
+                <span class='name-display-checkbox'>
+                    <input id="display-family-name-checkbox" type="checkbox" checked disabled value='family-name-input'>
+                    <label for="display-family-name-checkbox">Family Name</label>
+                </span>
+                <span class='name-display-checkbox'>
+                    <input id="display-suffex-checkbox" type="checkbox" value='suffex-input'>
+                    <label for="display-suffex-checkbox">Suffex</label>
+                </span>
+                <hr>
+                <label for="name-language-select">Language</label>
+                <select id="name-language-select">
+                    <option value="en" selected>English</option>
+                    <option value="zh">Chinese</option>
+                </select>
+            </span>
+        </div>
+        <div id='name-inputs' class='inputs'>
+            <input id="prefex-input" size='1' type="text" placeholder="Prefex" autocomplete=null>
+            <input id="given-name-input" size='1' type="text" placeholder="Given Name" autocomplete=null>
+            <input id="middle-name-input" size='1' type="text" placeholder="Middle Name" autocomplete=null>
+            <input id="family-name-input" size='1' type="text" placeholder="Family Name" autocomplete=null>
+            <input id="suffex-input" size='1' type="text" placeholder="Suffex" list="suffex-options" autocomplete=null>
+            <datalist id='suffex-options'>
+                <option value="Jr."></option>
+                <option value="II"></option>
+                <option value="III"></option>
+            </datalist>
+        </div>
+    </div>
+    <div id='sex-box' class='input-box'>
+        <div id='sex-header' class='input-header'>
+            <label>Sex</label>
+            <span data-hover-info='We fully support the LGBT community. In this section, please provide the indiviuals sex at birth. At a later point, you will have the option to reassign the gender.'>?</span>
+        </div>
+        <div id="sex-inputs" class='inputs'>
+            <input id="sex-male-option" type="radio" name='sex' value="male">
+            <label for="sex-male-option">Male</label>
+            <input id="sex-female-option" type="radio" name='sex' value="female">
+            <label for="sex-female-option">Female</label>
+            <input id="sex-unknown-option" type="radio" name='sex' value="null">
+            <label for="sex-unknown-option">Unknown</label>
+        </div>
+    </div>
+</form>
+    
+<div id='info-box'>
+    <h2>🛈nfo:</h2>
+    <p></p>
+</div>

@@ -156,26 +156,6 @@ form h2 {
   background-color: #28adc5;
 }
 
-#info-box {
-  display: none;
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: calc(min(500px, calc(100% - 20px)));
-  z-index: 9;
-  background-color: #c1e6ff;
-  font-size: 0.85rem;
-  border: 1px dashed #42b3ff;
-  padding: 10px;
-  pointer-events: none;
-  border-radius: 5px;
-}
-
-#info-box p {
-  white-space: pre-wrap;
-}
-
 hr {
   width: 98%;
   margin: 0.25rem auto;

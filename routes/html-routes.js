@@ -16,6 +16,16 @@ module.exports = function(app) {
             user
         })
     })
+
+    app.get('/person', isAuthenticated, ({user, person}, res) => {
+        res.render('person', {
+            pageTitle: 'My Family Tree - Home',
+            styleSheets: ['form', 'person'],
+            scriptSheets: ['person'],
+            user,
+            person
+        })
+    })
     
     // app.post('/login', passport.authenticate('local', {
     //     successRedirect: '/',

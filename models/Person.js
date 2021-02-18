@@ -3,41 +3,46 @@ const Schema = mongoose.Schema;
 
 const PersonSchema = new Schema({
 	discription: String,
-	names: [{
-		given: {
-			value: String,
-			common: String,
-			pronunciation: String,
-			romanization: String
+	names: {
+		appointed: {
+			type: Number,
+			default: 0
 		},
-		middle: {
-			value: String,
-			common: String,
-			pronunciation: String,
-			romanization: String,
-			preferred: {
-				type: Boolean,
-				default: false
+		list: [{
+			prefex: {
+				value: String
+			},
+			given: {
+				value: String,
+				common: String,
+				pronunciation: String,
+				romanization: String
+			},
+			middle: {
+				value: String,
+				common: String,
+				pronunciation: String,
+				romanization: String
+			},
+			family: {
+				value: String,
+				pronunciation: String,
+				romanization: String
+			},
+			suffex: {
+				value: String
+			},
+			category: {
+				type: String,
+				enum: ['birth', 'adoption', 'marrage', 'change'],
+				default: 'birth'
+			},
+			language: {
+				type: String,
+				default: 'en'
 			}
-		},
-		family: {
-			value: String,
-			pronunciation: String,
-			romanization: String
-		},
-		suffex: {
-			value: String
-		},
-		married: {
-			value: String,
-			pronunciation: String,
-			romanization: String
-		},
-		language: {
-			type: String,
-			default: 'en'
-		}
-	}],
+		}]
+	},
 	gender: String,
 	story: String,
 	relationships: {
